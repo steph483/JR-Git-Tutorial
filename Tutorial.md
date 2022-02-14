@@ -76,7 +76,9 @@ Just like when working on any project, there are times you need to take a break 
 The first step to stashing is to go back to the command line and enter the command `$ git stash`. If you look at the file, it will have changed it back to what it was before your edits, this is because the changes you've made have been stashed so you can safely move onto other branches. 
 
 If you use the `$ git status` command, it'll output: 
+
 <img src="/Images/GH-stashing-SS.PNG" width="300">
+
 This is because all of the changes you've made have been stashed away.
 
 #### Making Commits
@@ -98,7 +100,9 @@ Since you are sure about the edits that you've made, you can commit that file on
 The first step to committing work is to stage your files. This is done so that you can move the files you have edited from the working directory to the staging area. The purpose of the staging area is to have all the files relevant to a certain feature or topic be in the same commit. To do this, use the add command along with the name of the file, `$ git add <file name>`. If you were to have more that one file to stage, use `$ git add .` to add of them at the same time.
 
 Check that you file has been added by using the `$ git status` command. It should output the following:
+
 <img src="/Images/GH-gitadd-SS.PNG" width="400">
+
 This lets you see all the files (in green) that are ready to be committed.
 
 ---
@@ -112,12 +116,16 @@ Note: To remove a file from the staged area, use the `$ git restore --staged <fi
 Now that your file has been staged, it is time to make a commit. By committing something you are taking it from the staging area to the local repository on your computer. This can be done as many times as you'd like but it is important to be meaningful about the work you are committing so it is easier and more useful to look back at previous commits.
 
 To commit your staged files, simply write `$ git commit -m "<Message>"`. The purpose of adding the *-m* is to add a message tied to the commit that helps you remember what the commit was about when you look back at all the commits in the future. The output of this should be the following:
+
 <img src="/Images/GH-commit message-SS.PNG" width="400">
+
 The output confirms that your commit has been added, where it was added, the 7 character ID it has and how many changes were made. 
 
 ---
 Note: Commits can be really useful when deciding to go back on a previous feature. This is where the version control aspect of Git Hub comes into play since you can go back to any commit needed. To see all the commits you have, use the command `$ git log`.
+
 <img src="/Images/GH-log message-SS.PNG" width="400">
+
 This will show you the full commit ID, the author, date, and commit message.
 
 If you want to go back and look at the commit, simply type `git checkout <7 character ID>`. 
@@ -132,7 +140,9 @@ Lets go back to the stashes made on the *4friends* branch and restore them. This
 To see a all of the stashes, use the command `$ git stash list`. In the future you might have more than one to choose from but for this tutorial, there is only one to restore. 
 
 There are two ways to restore the changes, one is to the use the `$ git stash apply <stash ID>`. This will reapply the changes made to the file but it will not remove the stash from the list of stashes. To reapply the changes and remove the top stash from list of stashes, use the command `$ git stash pop`. This will apply the changes from only the first stash listed and remove that stash. It should output the following:
+
 <img src="/Images/GH-stash restore-SS.PNG" width="500">
+
 After reapplying the one stash, make sure the changes were made by looking back at your Mad_Libs.py file. 
 
 Since we are happy with the changes made, we can commit these changes using the same steps previously listed. 
@@ -146,7 +156,9 @@ Note: Although this was a simple example of stashing, you can image how useful i
 Now that you are happy with both the *main* and *4friends* branches and have committed all your changes to your local repository, it is time to merge them together. The purpose of merging things together is to incorporate all the new changes from both versions of the file into one. Merging is also a non-destructive combination that creates a new commit from both the files instead of rewriting over one. 
 
 To begin the merge lets make sure we are on the *main* branch and then use the command `$ git merge 4friends`. This merges the *4friends* branch into the *main* branch. You should get the following message: 
+
 <img src="/Images/GH-git merge-SS.PNG" width="400">
+
 You could also merge the *main* branch into the *4friends* branch but for our case we want to keep the changes on the main branch. 
 
 If you look at the Mad_Libs.py file now, it should have all of the new changes implemented. 
